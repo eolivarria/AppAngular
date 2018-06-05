@@ -1,0 +1,26 @@
+    <div ng-controller="registrationControl" >
+            <h1>Registration Successfull</h1>
+            <p>Thank your for registering your response.</p>
+            <div id="responses" style="text-align: left;padding: 25px;">
+                    
+                <h4>{{ questions[0].Question }}</h4>
+                <p>{{data.answer01}}</p>
+                <h4>{{ questions[1].Question }}</h4>
+                <p>{{data.answer02}}</p>
+                <h4>{{ questions[2].Question }}</h4>
+                <p>{{data.answer03}}</p>
+                <h4>{{ questions[3].Question }}</h4>
+                <div style="padding: 0px 35px;">
+                <h4>{{ questions[3].option[0] }}</h4>
+                <p>{{data.selectedOption1}}</p>
+                <h4>{{ questions[3].option[1] }}</h4>
+                <p>{{data.selectedOption2}}</p>
+                <h4>{{ questions[3].option[2] }}</h4>
+                <p>{{data.selectedOption3}}</p>
+                <h4>{{ questions[3].option[3] }}</h4>
+                <p>{{data.selectedOption4}}</p>
+                <br />
+                </div>
+            </div>
+            <p>Have a good day.</p>
+    </div>

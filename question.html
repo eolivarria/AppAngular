@@ -1,0 +1,68 @@
+    <form name="questionaireForm">
+    <div  ng-controller="questionControl">
+                <h1>{{ title | uppercase }}</h1>
+
+                <ol>
+                        <li>{{ questions[0].Question }}</li>
+                        <input type="radio" name="answer01" ng-model="data.answer01" value="{{questions[0].answer[0]}}" required/>{{questions[0].answer[0]}}
+                        <input type="radio" name="answer01" ng-model="data.answer01" value="{{questions[0].answer[1]}}" />{{questions[0].answer[1]}}
+                        <input type="radio" name="answer01" ng-model="data.answer01" value="{{questions[0].answer[2]}}" />{{questions[0].answer[2]}}
+                        <hr />
+                        <li>{{ questions[1].Question }}</li>
+                        <input type="radio" name="answer02" ng-model="data.answer02" value="{{questions[1].answer[0]}}" required/>{{questions[1].answer[0]}}
+                        <input type="radio" name="answer02" ng-model="data.answer02" value="{{questions[1].answer[1]}}" />{{questions[1].answer[1]}}
+                        <input type="radio" name="answer02" ng-model="data.answer02" value="{{questions[1].answer[2]}}" />{{questions[1].answer[2]}}
+                        <hr />
+                        <li>{{ questions[2].Question }}</li>
+                        <input type="radio" name="answer03" ng-model="data.answer03" value="{{questions[2].answer[0]}}" required/>{{questions[2].answer[0]}}
+                        <input type="radio" name="answer03" ng-model="data.answer03" value="{{questions[2].answer[1]}}" />{{questions[2].answer[1]}}
+                        <input type="radio" name="answer03" ng-model="data.answer03" value="{{questions[2].answer[2]}}" />{{questions[2].answer[2]}}
+                        <hr />
+
+                        <li>{{ questions[3].option[0] | uppercase }}</li>
+                        <br/>
+                        <select ng-model="data.selectedOption1" name="selectedOption1" required>
+                            <option ng-repeat="x in questions[3].answer" value="{{x}}">{{x}}</option>
+                        </select>
+                        <br/>
+                        <span style="color:red" ng-show="questionaireForm.selectedOption1.$invalid">
+                                <span ng-show="questionaireForm.selectedOption1.$error.required">Option is required.</span>
+                                </span>
+                        <br/>
+
+
+                        {{ questions[3].option[1] | uppercase }}
+                        <br/>
+                        <select ng-model="data.selectedOption2" name="selectedOption2" required>
+                            <option ng-repeat="x in questions[3].answer" value="{{x}}">{{x}}</option>
+                        </select>
+                        <br/>
+                        <span style="color:red" ng-show="questionaireForm.selectedOption2.$invalid">
+                                <span ng-show="questionaireForm.selectedOption2.$error.required">Option is required.</span>
+                                </span>
+                        <br/>
+
+                        {{ questions[3].option[2] | uppercase }}
+                        <br/>
+                        <select ng-model="data.selectedOption3" name="selectedOption3" required>
+                            <option ng-repeat="x in questions[3].answer" value="{{x}}">{{x}}</option>
+                        </select>
+                        <br/>
+                        <span style="color:red" ng-show="questionaireForm.selectedOption3.$invalid">
+                                <span ng-show="questionaireForm.selectedOption3.$error.required">Option is required.</span>
+                                </span>
+                        <br/>
+
+                        {{ questions[3].option[3] | uppercase }}
+                        <br/>
+                        <select ng-model="data.selectedOption4" name="selectedOption4" required>
+                            <option ng-repeat="x in questions[3].answer" value="{{x}}">{{x}}</option>
+                        </select>
+                        <br/>
+                        <span style="color:red" ng-show="questionaireForm.selectedOption4.$invalid">
+                                <span ng-show="questionaireForm.selectedOption4.$error.required">Option is required.</span>
+                                </span>
+                </ol>
+    </div>
+    <input type="submit" ng-click="go('/screen4')" ng-disabled="questionaireForm.selectedOption1.$invalid || questionaireForm.selectedOption2.$invalid || questionaireForm.selectedOption3.$invalid || questionaireForm.selectedOption4.$invalid" value="Submit"></button>
+    </form>
