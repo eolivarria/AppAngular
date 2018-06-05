@@ -60,12 +60,12 @@
                         $scope.go = function ( path ) {  $location.path( path ); };
                         $scope.data = ResponseService.data;
                         $scope.title = "perfil do investidor - questionário";
-                        $http.get("https://raw.githubusercontent.com/eolivarria/WebPageScraper/master/questions.json")
+                        $http.get("https://raw.githubusercontent.com/eolivarria/AppAngular/master/questions.json")
                         .then(function (response) {$scope.questions = response.data.questions;});
                     });
                     app.controller('registrationControl', function($scope, $http, ResponseService) {
                         $scope.data = ResponseService.data;
-                        $http.get("https://raw.githubusercontent.com/eolivarria/WebPageScraper/master/questions.json")
+                        $http.get("https://raw.githubusercontent.com/eolivarria/AppAngular/master/questions.json")
                         .then(function (response) {$scope.questions = response.data.questions;});
                     });
                     function myFunction( ) {
